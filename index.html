@@ -6,6 +6,7 @@
     <title>Armando Castellanos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,14 +18,18 @@
             <a href="#music">Música</a> | 
             <a href="#travel">Viajes</a>
         </p>
+        <button id="toggle-dark">🌙 Modo Oscuro</button>
     </header>
+
     <nav>
         <a href="#about">Sobre mí</a>
+        <a href="#skills">Habilidades</a>
         <a href="#projects">Proyectos</a>
+        <a href="#inspiration">Inspiración</a>
         <a href="#contact">Contacto</a>
     </nav>
 
-    <section id="about">
+    <section id="about" data-aos="fade-up">
         <h2>Sobre mí</h2>
         <div class="about-container">
             <div class="about-text">
@@ -38,7 +43,17 @@
         </div>
     </section>
 
-    <section id="fitness">
+    <section id="skills" data-aos="fade-up">
+        <h2>Habilidades Técnicas</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li><i class="fa-solid fa-code"></i> Python, Java, C++</li>
+            <li><i class="fa-solid fa-database"></i> MySQL, PostgreSQL</li>
+            <li><i class="fa-solid fa-laptop-code"></i> HTML, CSS, JavaScript</li>
+            <li><i class="fa-solid fa-screwdriver-wrench"></i> Soporte técnico y reparación de equipos</li>
+        </ul>
+    </section>
+
+    <section id="fitness" data-aos="fade-up">
         <h2>Fitness</h2>
         <video controls>
             <source src="fitness.mp4" type="video/mp4">
@@ -46,33 +61,58 @@
         </video>
     </section>
 
-    <section id="music">
+    <section id="music" data-aos="fade-up">
         <h2>Música</h2>
-        <p>La música que más me gusta es el género regional mexicano, ya que me identifico con su estilo y sus letras. Me atrae la riqueza cultural que transmite y la conexión que genera con las personas. Por eso, me gustaría incursionar como DJ, explorando nuevas formas de mezclar este género y llevarlo a diferentes públicos de una manera innovadora y emocionante </p>
+        <p> La música que más me gusta es el género regional mexicano, ya que me identifico con su estilo y sus letras. Me atrae la riqueza cultural que transmite y la conexión que genera con las personas. Por eso, me gustaría incursionar como DJ, explorando nuevas formas de mezclar este género y llevarlo a diferentes públicos de una manera innovadora y emocionante</p>
     </section>
 
-    <section id="travel">
+    <section id="travel" data-aos="fade-up">
         <h2>Viajes</h2>
-        <p>He tenido la oportunidad de viajar a Canadá, Colombia y varios estados de México. Cada destino me ha permitido conocer nuevas culturas, tradiciones y paisajes, lo que ha enriquecido mi perspectiva del mundo. Disfruto explorar nuevos lugares, descubrir su gastronomía y aprender de las experiencias que cada viaje me brinda. </p>
+        <p> He tenido la oportunidad de viajar a Canadá, Colombia y varios estados de México. Cada destino me ha permitido conocer nuevas culturas, tradiciones y paisajes, lo que ha enriquecido mi perspectiva del mundo. Disfruto explorar nuevos lugares, descubrir su gastronomía y aprender de las experiencias que cada viaje me brinda. </p>
     </section>
 
-    <section id="projects">
+    <section id="projects" data-aos="fade-up">
         <h2>Proyectos</h2>
-        <p>Algunos de mis proyectos incluyen el desarrollo de software y la implementación de soluciones tecnológicas innovadoras. Me apasiona crear herramientas que resuelvan problemas específicos y optimicen procesos, además de explorar nuevas tecnologías que me permitan seguir aprendiendo y mejorando en mi campo. Estos proyectos me han permitido trabajar en diversas áreas, siempre con el objetivo de ofrecer soluciones eficientes y de calidad.</p>
+        <div class="project-card">
+            <h3>Registro de Caja</h3>
+            <p>Sistema en Python que administra cambios y pagos en efectivo.</p>
+            <a href="#" target="_blank">Ver más</a>
+        </div>
     </section>
 
-    <section id="contact">
+    <section id="inspiration" data-aos="fade-up">
+        <h2>Frase que me inspira</h2>
+        <blockquote>
+            "El único límite a nuestros logros de mañana es nuestras dudas de hoy." – Franklin D. Roosevelt
+        </blockquote>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
         <h2>Contacto</h2>
         <p>Conéctate conmigo en redes sociales:</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/armando_castellanoos/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
             <a href="https://www.facebook.com/share/1CxePgamiq/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
         </div>
+        <form action="mailto:tuemail@dominio.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu nombre" required><br>
+            <input type="email" name="email" placeholder="Tu correo" required><br>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje" rows="5" required></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 2025 Armando Castellanos. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script>
+        document.getElementById('toggle-dark').onclick = function () {
+            document.body.classList.toggle('dark-mode');
+        };
+    </script>
 </body>
 </html>
 
@@ -81,10 +121,23 @@
         font-family: 'Poppins', sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #e6f0ff; 
+        background-color: #e6f0ff;
         color: #333;
         text-align: center;
         scroll-behavior: smooth;
+    }
+
+    .dark-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    .dark-mode header, .dark-mode footer {
+        background-color: #1f1f1f;
+    }
+
+    .dark-mode a {
+        color: #90caf9;
     }
 
     header {
@@ -181,6 +234,41 @@
     .social-icons a:hover {
         transform: scale(1.1);
         color: #005f99;
+    }
+
+    .project-card {
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        max-width: 600px;
+        transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+        transform: scale(1.03);
+    }
+
+    form input, form textarea {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    form button {
+        padding: 10px 20px;
+        background-color: #007acc;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #005f99;
     }
 
     footer {
